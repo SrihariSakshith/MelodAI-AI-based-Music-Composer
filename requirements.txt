@@ -1,0 +1,15 @@
+# requirements.txt
+streamlit
+transformers
+torch
+sentence-transformers
+numpy
+pandas
+scikit-learn
+pydub
+scipy
+accelerate
+
+# python -m venv myenv
+# myenv\Scripts\activate
+# pip install -r requirements.txt

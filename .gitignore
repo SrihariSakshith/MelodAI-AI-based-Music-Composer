@@ -1,0 +1,25 @@
+# .gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+myenv/
+models/
+output/
+
+# Streamlit
+.streamlit/
+
+# Generated Content
+output/
+*.mp3
+*.wav
+
+# Hugging Face Cache
+.cache/
+huggingface/
