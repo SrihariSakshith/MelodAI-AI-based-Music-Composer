@@ -11,7 +11,7 @@ venv/
 myenv/
 models/
 output/
-
+app.py
 # Streamlit
 .streamlit/
 

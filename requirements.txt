@@ -13,3 +13,4 @@ accelerate
 # python -m venv myenv
 # myenv\Scripts\activate
 # pip install -r requirements.txt
+# streamlit run 1_Home.py
