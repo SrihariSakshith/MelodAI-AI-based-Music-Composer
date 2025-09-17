@@ -58,7 +58,7 @@ MelodAI/
    ```bash
    git clone https://github.com/SrihariSakshith/MelodAI-AI-based-Music-Composer.git
    cd MelodAI-AI-based-Music-Composer
-````
+```
 
 2. **Create a virtual environment & install dependencies**
 
