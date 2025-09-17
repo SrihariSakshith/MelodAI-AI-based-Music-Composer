@@ -58,7 +58,7 @@ MelodAI/
    ```bash
    git clone https://github.com/SrihariSakshith/MelodAI-AI-based-Music-Composer.git
    cd MelodAI-AI-based-Music-Composer
-```
+   ```
 
 2. **Create a virtual environment & install dependencies**
 
@@ -88,12 +88,6 @@ MelodAI/
 * Enter your mood (e.g. *“I’m feeling joyful and energetic”*).
 * Optionally adjust sliders/parameters (tempo, scale, instrument, etc.).
 * Click **Generate** → Preview the music → Save or download.
-
----
-
-## Examples / Screenshots
-
-*(Add screenshots of the UI, and maybe examples of generated melodies or parameter settings. This helps users see what to expect.)*
 
 ---
 
