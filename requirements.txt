@@ -1,0 +1,24 @@
+# requirements.txt
+streamlit
+transformers
+torch
+sentence-transformers
+numpy
+pandas
+scikit-learn
+pydub
+scipy
+accelerate
+
+# Installation and Setup Instructions:
+# 1. Create virtual environment: python -m venv myenv
+# 2. Activate environment: myenv\Scripts\activate (Windows) or source myenv/bin/activate (Mac/Linux)
+# 3. Install dependencies: pip install -r requirements.txt
+# 4. Run the application: streamlit run Home.py
+
+# Features:
+# - User authentication with registration and login
+# - Personal music composition history
+# - AI-powered mood analysis and music generation
+# - Dark/Light theme support
+# - Responsive and modern UI design

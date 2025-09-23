@@ -1,0 +1,220 @@
+/* style.css */
+
+/* --- FONT IMPORT --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- THEME VARIABLES (LIGHT & DARK) --- */
+:root {
+    --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Light Theme */
+    --primary-color: #4F46E5;
+    --primary-light: #C7D2FE;
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --bg-main: #F9FAFB;
+    --bg-card: #FFFFFF;
+    --bg-input: #FFFFFF;
+    --border-color: #E5E7EB;
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] {
+    /* Dark Theme */
+    --primary-color: #818CF8;
+    --primary-light: #4F46E5;
+    --text-primary: #F9FAFB;
+    --text-secondary: #9CA3AF;
+    --bg-main: #111827;
+    --bg-card: #1F2937;
+    --bg-input: #374151;
+    --border-color: #374151;
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* --- BASE & TYPOGRAPHY --- */
+.stApp { background-color: var(--bg-main); font-family: var(--font-family); }
+h1, h2, h3, h4, h5, h6 { color: var(--text-primary); text-align: center; }
+p, div, span, label { color: var(--text-secondary); }
+h1 { font-size: 3rem; font-weight: 700; padding-top: 1rem; }
+h2 { font-weight: 600; font-size: 1.5rem; color: var(--text-secondary); margin-bottom: 2rem; }
+h3 { text-align: left; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.5rem; margin-top: 3rem; margin-bottom: 1.5rem; }
+
+/* --- SIDEBAR --- */
+[data-testid="stSidebar"] { background-color: var(--bg-card); border-right: 1px solid var(--border-color); }
+
+/* --- HOMEPAGE & COMPONENT CARDS --- */
+.hero-section { padding: 3rem 1rem; text-align: center; }
+.feature-card {
+    background-color: var(--bg-card); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color);
+    transition: all 0.3s ease; height: 100%; box-shadow: var(--card-shadow);
+}
+.feature-card:hover { transform: translateY(-8px); }
+.feature-card .icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem; }
+
+/* --- COMPOSER PAGE --- */
+.composer-container {
+    background: var(--bg-card); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow); margin-top: 2rem;
+}
+.stTextArea textarea {
+    background-color: var(--bg-input) !important; color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.05);
+}
+.stTextArea textarea:focus { border-color: var(--primary-color) !important; box-shadow: 0 0 0 2px var(--primary-light) !important; }
+
+/* --- BUTTONS --- */
+.stButton > button { transition: all 0.2s ease !important; }
+/* Sample prompt buttons */
+.stButton > button[kind="secondary"] {
+    background-color: var(--bg-main) !important; color: var(--text-secondary) !important; border: 1px solid var(--border-color) !important;
+    font-weight: 500 !important; border-radius: 8px !important;
+}
+.stButton > button[kind="secondary"]:hover { border-color: var(--primary-color) !important; color: var(--primary-color) !important; }
+/* Main compose button */
+.stButton > button[kind="primary"] {
+    font-size: 1.25rem !important; font-weight: bold !important; padding: 0.8rem 0 !important;
+    border-radius: 10px !important; color: white !important;
+    background-image: linear-gradient(to right, #4338CA, #6366F1) !important; border: none !important;
+    box-shadow: 0 4px 15px rgba(67, 56, 202, 0.3) !important;
+}
+.stButton > button[kind="primary"]:hover { transform: translateY(-3px) !important; box-shadow: 0 7px 20px rgba(67, 56, 202, 0.4) !important; }
+
+/* --- RESULTS AREA --- */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.results-area { margin-top: 3rem; animation: fadeIn 0.6s ease-in-out forwards; }
+.results-area h3 { text-align: center; border: none; font-size: 1.8rem; margin-bottom: 2rem; }
+.blueprint-container, .audio-container { background: var(--bg-card); border-radius: 16px; padding: 2rem; border: 1px solid var(--border-color); height: 100%; }
+.param-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.param-card {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    background-color: var(--bg-main); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color);
+}
+.param-label { font-size: 0.9rem; color: var(--text-secondary); font-weight: 500; margin-bottom: 0.5rem; }
+.param-value { font-size: 1.2rem; color: var(--text-primary); font-weight: 600; }
+.param-icon { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+
+/* --- AUTHENTICATION FORMS --- */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 2rem;
+    justify-content: center;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 3rem;
+    padding: 0 2rem;
+    background-color: var(--bg-main);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+/* --- USER PROFILE SECTION --- */
+.user-profile {
+    background: var(--bg-card);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+/* --- HISTORY PAGE STYLES --- */
+.history-card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.history-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow);
+}
+
+.param-mini-card {
+    text-align: center;
+    padding: 0.5rem;
+    background: var(--bg-main);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* --- ENHANCED BUTTONS --- */
+.stButton > button[kind="secondary"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --- METRICS STYLING --- */
+.metric-container {
+    background: var(--bg-card);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+/* --- POPOVER STYLING --- */
+.stPopover > div > div {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+}
+
+/* --- FORM STYLING --- */
+.stTextInput > div > div > input {
+    background-color: var(--bg-input) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    color: var(--text-primary) !important;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 2px var(--primary-light) !important;
+}
+
+/* --- SELECTBOX STYLING --- */
+.stSelectbox > div > div > div {
+    background-color: var(--bg-input) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+}
+
+/* --- TABS CONTENT --- */
+.stTabs [data-baseweb="tab-panel"] {
+    padding-top: 2rem;
+}
+
+/* --- SUCCESS/ERROR MESSAGES --- */
+.stSuccess, .stError, .stWarning, .stInfo {
+    border-radius: 8px !important;
+    border: none !important;
+}
+
+/* --- AUDIO PLAYER STYLING --- */
+audio {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* --- DOWNLOAD BUTTON STYLING --- */
+.stDownloadButton > button {
+    background: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+}
+
+.stDownloadButton > button:hover {
+    background: var(--primary-light) !important;
+    transform: translateY(-2px) !important;
+}
